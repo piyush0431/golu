@@ -1,0 +1,119 @@
+/* Used Shades & Colours */
+
+:root {
+    --background: linear-gradient(135deg, #111, #222, #111);
+    --circle: #ff1062;
+    --black-style: #222;
+    --white: #ffffff;
+    --font: #d766c9;
+    --text-shadow: #ccc;
+    --text-shadow-final-touch: rgba(0, 0, 0, 0.2);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Tw Cen Mt', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background: var(--background);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    border: 5vw solid var(--circle);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1vw var(--black-style),
+        0 0 0 1.3vw var(--white);
+}
+
+#star {
+    position: absolute;
+
+    z-index: -1;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+#star i {
+    position: absolute;
+    background: var(--white);
+    border-radius: 100%;
+    box-shadow: 0 0 10px var(--white),
+                0 0 20px var(--white),
+                0 0 40px var(--white),
+                0 0 80px var(--white);
+    animation: twinkle 2s linear infinite;
+}
+
+h2 {
+    position: absolute;
+    font-size: 9vw;
+    color: var(--font);
+    text-align: center;
+    line-height: 2em;
+    transform: skewY(-7deg);
+    text-shadow: 1px 1px 0 var(--text-shadow),
+        2px 2px 0 var(--text-shadow),
+        3px 3px 0 var(--text-shadow),
+        4px 4px 0 var(--text-shadow),
+        5px 5px 0 var(--text-shadow),
+        10px 10px 0 var(--text-shadow-final-touch);
+    animation: floating 5s ease-in-out infinite;
+}
+
+h2 span {
+    font-weight: 700;
+    font-size: 3em;
+    text-shadow: 1px 1px 0 var(--text-shadow),
+    2px 2px 0 var(--text-shadow),
+    3px 3px 0 var(--text-shadow),
+    4px 4px 0 var(--text-shadow),
+    5px 5px 0 var(--text-shadow),
+    6px 6px 0 var(--text-shadow),
+    7px 7px 0 var(--text-shadow),
+    8px 8px 0 var(--text-shadow),
+    9px 9px 0 var(--text-shadow),
+    20px 20px 0 var(--text-shadow-final-touch);
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: skewY(-7deg) translate(0, -20px);
+    }
+
+    50% {
+        transform: skewY(-7deg) translate(0, 20px);
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
